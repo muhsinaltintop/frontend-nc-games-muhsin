@@ -1,0 +1,166 @@
+* {
+    text-decoration: none;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+
+.logo {
+    color: white;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 75px;
+    background-color: #00828c;
+    color: white;
+    min-width: 300px;
+}
+
+
+@media screen and (max-width: 450px) {
+.logo {
+    display: flex;
+    position: absolute;
+    top: 15px;
+    left: 35px;
+}
+.nav_links{
+    display: none;
+
+}
+.nav_links_mobile {
+    position: absolute;
+    display: block;
+    list-style: none;
+    left: 0;
+    transition: all 0.5s ease-out;
+
+}
+.menuitem {
+    color: white;
+    text-align: center;
+    padding: 32px;
+    width: 100%;
+    transition: all 0.5s ease;
+    background-color: #005469;
+    position:relative;
+    list-style: none;
+    
+}
+.mobile_menu_icon {
+    display: block;
+    position: absolute;
+    font-size: 30px;
+    color: white;
+    background-color: #00828c;
+    border: none;
+    outline: none;
+    top: 15px;
+    right: 25px;
+}
+
+}
+
+
+
+@media screen and (min-width: 451px) and (max-width: 920px) {
+.logo {
+    display: flex;
+    position: absolute;
+    top: 15px;
+    left: 35px;
+}
+.nav_links{
+    display: none;
+
+}
+.nav_links_mobile {
+    position: absolute;
+    display: block;
+    list-style: none;
+    left: 0;
+    transition: all 0.5s ease-out;
+
+}
+.menuitem {
+    color: white;
+    text-align: center;
+    padding: 32px;
+    width: 100%;
+    transition: all 0.5s ease;
+    background-color: #005469;
+    position:relative;
+    list-style: none;
+    
+}
+.mobile_menu_icon {
+    display: block;
+    position: absolute;
+    font-size: 30px;
+    color: white;
+    background-color: #00828c;
+    border: none;
+    outline: none;
+    top: 15px;
+    right: 25px;
+
+}
+}
+
+@media screen and (min-width: 921px) {
+
+    .navbar {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 75px;
+        background-color: #00828c;
+        color: white;
+        min-width: 300px;
+    }
+    
+    .logo {
+        font-size: 28px;
+        margin-left: 1em;
+    }
+    
+    .nav_links {
+        float: right;
+        display: flex;
+        justify-content: flex-end;
+        list-style: none;
+        width: 75%;
+    }
+    .menuitem {
+        background-color: turquoise;
+        border: 1px solid black;
+        box-shadow: black 5px 5px;
+        cursor: pointer;
+        margin: 0 5px;
+        padding: 10px 10px;
+        font-size: 12px;
+        color: white;
+        text-transform: uppercase;
+        
+    }
+
+    .menuitem:hover {
+        background-color: black;
+        border: 1px solid white;
+        box-shadow: turquoise 5px 5px;
+        cursor: pointer;
+        margin: 0 5px;
+        padding: 10px 10px;
+        font-size: 12px;
+        color: turquoise;
+        text-transform: uppercase;
+        
+    }
+    
+    .mobile_menu_icon {
+        display: none;
+    }
+    }
