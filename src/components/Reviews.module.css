@@ -1,0 +1,167 @@
+
+.review {
+    text-align: center;
+  }
+  /* Smartphones (portrait and landscape) ----------- */
+  @media screen and (max-width: 450px) {
+    /* Styles */
+    
+    .review {
+      display: block;
+      clear: both;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .review ul {
+      list-style: none;
+      padding-left: 0px;
+    }
+  
+    .review ul li {
+      margin-top: 1em;
+      margin-bottom: 1em;
+      text-align: center;
+      border: black solid 1px;
+      max-width: 450px;
+      min-width: 300px;
+      padding: 10px;
+      color: black;
+      background-color: #e1e8eb;
+    }
+    
+    .review ul li div {
+      margin: 1em;
+    }
+  
+    .review ul li a {
+      text-align: center;
+      border: white solid 1px;
+      background-color: #3e065f;
+      max-width: 450px;
+      min-width: 300px;
+      padding: 0.5em;
+  
+      color: white;
+    }
+  
+    .review ul li img {
+      display: block;
+      border: black solid 2px;
+      width: 250px;
+      min-width: 240px;
+      margin: auto;
+    }
+  
+    .review_body {
+      display: none;
+    }
+  }
+  
+  /* iPads (portrait and landscape) ----------- */
+  @media screen and (min-width: 451px) and (max-width: 920px) {
+    /* Styles */
+    .review {
+      display: block;
+      margin: auto;
+    }
+  
+    .review_link {
+      color: black;
+    }
+    .review ul {
+      list-style: none;
+    }
+    
+    .review ul li {
+      
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 1em;
+      margin-bottom: 1em;
+      text-align: center;
+      border: black solid 1px;
+      background-color: burlywood;
+      max-width: 460px;
+      min-width: 300px;
+      padding: 10px;
+    }
+  
+    .review ul li img {
+      display: block;
+      border: black solid 2px;
+      width: 350px;
+      min-width: 280px;
+      margin: auto;
+    }
+  
+    .review ul li div {
+      margin: 1em;
+      
+    }
+  
+    .owner a {
+      border: #3e065f solid 1px;
+      background-color: turquoise;
+      padding: 0.6em;
+      color: white;
+      font-weight: bold;
+      box-shadow: black 5px 5px;
+    }
+  }
+  
+  /* Desktops and laptops ----------- */
+  @media screen and (min-width: 921px) {
+    /* Styles */
+    .review {
+      display: block;
+      float: left;
+      padding-bottom: 1em;
+      padding-left: auto;
+      padding-right: auto;
+      width: 100%;
+    }
+    .review_link {
+      color: black;
+    }
+    .review ul {
+      list-style: none;
+      width: 80%;
+      padding-left: 10%;
+      padding-right: 10%;
+    }
+    
+    .review ul li {
+      margin-top: 1em;
+      margin-bottom: 1em;
+      text-align: center;
+      border: black solid 1px;
+      background-color: burlywood;
+      min-width: 500px;
+      
+    }
+  
+    .review ul li img {
+      display: block;
+      border: black solid 2px;
+      width: 70%;
+      min-width: 400px;
+      margin: auto;
+      margin-top: 1em;
+      margin-bottom: 1em;
+    }
+  
+    .review ul li div {
+      margin: 1em;
+     
+    }
+  
+    .owner a {
+      border: #3e065f solid 1px;
+      background-color: turquoise;
+      padding: 0.6em;
+      color: white;
+      font-weight: bold;
+      box-shadow: black 5px 5px;
+    }
+  }
+  
