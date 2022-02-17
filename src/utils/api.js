@@ -21,3 +21,9 @@ export const getAllCategories = () => {
         return res.data.categories;
     })
 };
+
+export const getUserByName = (username) => {
+    return gamesApi.get(`/users/${username}`).then((res)=> {
+        return res.data.user;
+    })
+};
