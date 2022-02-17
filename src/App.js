@@ -5,6 +5,7 @@ import Comments from "./components/Comments";
 import Navbar from "./components/Navbar";
 import Review from "./components/Review";
 import  Reviews  from "./components/Reviews";
+import ReviewsByCategory from "./components/ReviewsByCategory";
 import User from "./components/User";
 
 function App() {
@@ -18,7 +19,8 @@ function App() {
         <Route path="/users/:username" element={<User />} />
         <Route path="/users/:username" element={<User />} />
         <Route path="/reviews/:review_id/comments" element={<Comments />} />
-
+        <Route path="category/:category/reviews" element={<ReviewsByCategory />}
+        />
       </Routes>
     </BrowserRouter>
   );

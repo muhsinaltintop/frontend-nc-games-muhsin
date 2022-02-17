@@ -26,7 +26,6 @@ const Navbar = () => {
             <Link to={`category/${category.slug}/reviews`}>
               <li key={category.slug} className={styles.menuitem} >
                 <h2>
-                  {/* /reviews/${category.slug} */}
                   <span>{category.slug}</span>
                 </h2>
               </li>

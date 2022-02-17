@@ -1,28 +1,44 @@
 import React, { useEffect, useState } from 'react'
-import { getAllReviews } from '../utils/api'
+import { getAllReviews, sortReviewsBy } from '../utils/api'
 import styles from "./Reviews.module.css";
 import dayjs from 'dayjs';
 import { Link } from 'react-router-dom';
+import DropDown from './DropDown';
 
 const Reviews = () => {
   const [reviews, setAllReviews] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [query, setQuery] = useState("");
+  const handleChange = (event) => {
+      setQuery(`${event.target.value}`)
+  }
 
 
 useEffect(()=>{
     setIsLoading(true);
     setError(null);
-    getAllReviews()
-    .then((reviewsFromApi) => {
+    if (query === "") {
+
+        getAllReviews()
+        .then((reviewsFromApi) => {
+            setAllReviews(reviewsFromApi);
+            setIsLoading(false);
+        })
+        .catch((err)=>{
+            setError(err);
+        });
+    } else {
+        sortReviewsBy(query)
+      .then((reviewsFromApi) => {
         setAllReviews(reviewsFromApi);
         setIsLoading(false);
-    })
-    .catch((err)=>{
+      })
+      .catch((err) => {
         setError(err);
-    });
-
-}, []);  
+      });
+    }
+}, [query]);  
     return (
     <main className={styles.review}>
         <h2>Reviews</h2>
@@ -32,6 +48,11 @@ useEffect(()=>{
             <p>Error!</p>
         ) : (
         <ul>
+            {
+                <div>
+                    Sort Reviews By: <DropDown dropChange={handleChange}/>
+                </div>
+            }
             {reviews.map((review)=>{
                 return(
                     <Link className={styles.review_link} to={`/reviews/${review.review_id}`}>
@@ -46,19 +67,10 @@ useEffect(()=>{
                             <div  className={styles.votes}> Votes: {review.votes}</div>                                             
                         </li>
                     </Link>
-
                 )
-
-            }
-            
-            )
-
-            }
+            })}
         </ul>
-
-        )
-
-        }
+    )}
     
     
     
