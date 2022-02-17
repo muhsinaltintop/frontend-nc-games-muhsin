@@ -1,9 +1,9 @@
 /* Smartphones (portrait and landscape) ----------- */
 @media screen and (max-device-width: 450px) {
-    /* Styles */
-      main {
-        width: 100%;
-        text-align: center;
+  /* Styles */
+  main {
+    width: 100%;
+    text-align: center;
       }
     
       .user_header {

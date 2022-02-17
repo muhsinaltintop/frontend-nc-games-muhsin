@@ -2,7 +2,7 @@
 
 You can reach;
 
-to the deployed version of project on: https://muhsin-alintop-ncgames.netlify.app/
+to the deployed version of project on: https://nc-games-muhsin-altintop.netlify.app
 
 to the backend repo on: https://github.com/muhsinaltintop/muhsinNcGames.git
 
