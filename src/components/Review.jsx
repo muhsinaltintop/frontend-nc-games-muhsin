@@ -2,13 +2,19 @@ import  dayjs  from "dayjs";
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getReview } from "../utils/api";
+import AddComment from "./AddComment";
+import Comments from "./Comments";
 import styles from "./Reviews.module.css"
+import ReviewVote from "./ReviewVote";
 
 const Review = ({ username }) => {
     const [ review, setReview ] = useState({});
     const [ isLoading, setIsLoading ] = useState(true);
+    const [voted, setVoted] = useState(false);
     const [ error, setError ] = useState(null);
     const { review_id } = useParams();
+    const [comment, setComment] = useState(false);
+
 
     useEffect(()=>{
         setIsLoading(true);
@@ -21,7 +27,7 @@ const Review = ({ username }) => {
         .catch((err)=>{
             setError({ err })
         })
-    },[review_id]);
+    },[review_id, comment, voted]);
 
     return (
         <main className={ styles.review }>
@@ -48,7 +54,24 @@ const Review = ({ username }) => {
                             Review: {review.review_body}
                         </div>
                         <div className={styles.votes}>Votes: {review.votes}</div>
+                        <div><ReviewVote
+                            currVotes={review.votes}
+                            review_id={review.review_id}
+                            setVoted={setVoted}
+                            />
+                        </div>
                     </li>
+                    <p>
+                  <Comments />
+                </p>
+                <p>
+                <AddComment
+                       username={username}
+                       review_id={review.review_id}
+                       setComment={setComment}/> 
+
+
+                </p>
                 </ul>
 
 

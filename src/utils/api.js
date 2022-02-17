@@ -27,3 +27,33 @@ export const getUserByName = (username) => {
         return res.data.user;
     })
 };
+
+export const getCommentsByReview = (review_id) => {
+    return gamesApi.get(`/reviews/${review_id}/comments`).then((res) => {
+      return res.data.comments;
+    });
+  };
+
+  export const postCommentByReviewId = (review_id, username, body) => {
+    return gamesApi.post(`/reviews/${review_id}/comments`, {username: username, body: body}).then((res)=>{
+      return res.data.comment;
+    })
+  }
+  
+  export const deleteCommentById = (comment_id) => {
+    return gamesApi.delete(`/comments/${comment_id}`).then((res)=>{
+    })
+  }
+  
+  export const updateCommentVote = (comment_id, inc_votes) => {
+    return gamesApi.patch(`/comments/${comment_id}`, { inc_votes: inc_votes }).then((res)=>{
+      return res.data.comment;
+    })
+  }
+
+  export const updateReviewVote = (review_id, inc_votes) => {
+    return gamesApi.patch(`/reviews/${review_id}`, { inc_votes: inc_votes }).then((res)=>{
+      return res.data.review;
+    })
+  }
+  

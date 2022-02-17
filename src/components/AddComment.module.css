@@ -1,0 +1,9 @@
+.addComment {
+    text-align: left;
+    }
+
+.addComment_body textarea {
+      width: 600px;
+      height: 200px;
+    }
+    
