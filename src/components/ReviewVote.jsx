@@ -4,10 +4,9 @@ import { updateReviewVote } from "../utils/api"
 const ReviewVote = ({currentVote, review_id, setVoted}) => {
     const [vote, setVotes] = useState(currentVote);
     const [error, setError] = useState(false);
-    const [submitted, setSubmitted] = useState(false);
 
-    const handleClick = (e) => {
-        e.preventDefault();
+    const handleClick = () => {
+   
         setVotes((currentVote)=>{
             return currentVote + 1;
         });
@@ -15,7 +14,6 @@ const ReviewVote = ({currentVote, review_id, setVoted}) => {
         .then((res)=>{
             setError(false);
             setVoted(true);
-            setSubmitted(true);
         })
         .catch((err)=>{
             setError(true);
@@ -31,7 +29,7 @@ const ReviewVote = ({currentVote, review_id, setVoted}) => {
 
     return (
         <div>
-            <button value={vote} onClick={handleClick} disabled={submitted}>
+            <button value={vote} onClick={handleClick}>
                 Vote
             </button>
         </div>

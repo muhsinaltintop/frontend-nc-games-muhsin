@@ -1,19 +1,18 @@
-import  dayjs  from "dayjs";
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { getReview } from "../utils/api";
 import AddComment from "./AddComment";
 import Comments from "./Comments";
+import ReviewCard from "./ReviewCard";
 import styles from "./Reviews.module.css"
-import ReviewVote from "./ReviewVote";
 
 const Review = ({ username }) => {
     const [ review, setReview ] = useState({});
     const [ isLoading, setIsLoading ] = useState(true);
-    const [voted, setVoted] = useState(false);
+    const [ voted, setVoted] = useState(false);
     const [ error, setError ] = useState(null);
     const { review_id } = useParams();
-    const [comment, setComment] = useState(false);
+    const [ comment, setComment] = useState(false);
 
 
     useEffect(()=>{
@@ -27,6 +26,7 @@ const Review = ({ username }) => {
         .catch((err)=>{
             setError({ err })
         })
+        setVoted(false);
     },[review_id, comment, voted]);
 
     return (
@@ -38,28 +38,12 @@ const Review = ({ username }) => {
             ) : (
                 <ul>
                     <li key={review.review_id}>
-                <       h1>Review: {review.review_id}</h1>
-                        <img src={review.review_img_url} alt={review.title} />
-                        <div className={styles.title}>{review.title}</div>
-                        <div className={styles.date}>
-                            {dayjs(review.created_at).format("DD/MM/YYYY")}
-                        </div>
-                        <div className={styles.owner}>
-                        <Link id="ownerlink" to={`/users/${review.owner}`}>by {review.owner}</Link>
-                        </div>
-                        <div className={styles.designer}>
-                            Designer: {review.designer}
-                        </div>
-                        <div className={styles.review_body}>
-                            Review: {review.review_body}
-                        </div>
-                        <div className={styles.votes}>Votes: {review.votes}</div>
-                        <div><ReviewVote
-                            currVotes={review.votes}
-                            review_id={review.review_id}
-                            setVoted={setVoted}
-                            />
-                        </div>
+                     <ReviewCard
+                     currVotes={review.votes}
+                     review_id={review.review_id}
+                     setVoted={setVoted}
+                     
+                     />
                     </li>
                     <p>
                   <Comments />
@@ -68,7 +52,8 @@ const Review = ({ username }) => {
                 <AddComment
                        username={username}
                        review_id={review.review_id}
-                       setComment={setComment}/> 
+                       setComment={setComment}
+                       /> 
 
 
                 </p>
