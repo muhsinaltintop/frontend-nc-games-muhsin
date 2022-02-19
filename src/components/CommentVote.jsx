@@ -4,8 +4,7 @@ import { updateCommentVote } from "../utils/api"
 const CommentVote = ({currentVote, comment_id, setVoted}) => {
     const [vote, setVotes] = useState(currentVote);
     const [error, setError] = useState(false);
-    const [submitted, setSubmitted] = useState(false);
-
+    
     const handleClick = (e) => {
         e.preventDefault();
         setVotes((currentVote)=>{
@@ -15,7 +14,6 @@ const CommentVote = ({currentVote, comment_id, setVoted}) => {
         .then((res)=>{
             setError(false);
             setVoted(true);
-            setSubmitted(true);
         })
         .catch((err)=>{
             setError(true);
@@ -31,7 +29,7 @@ const CommentVote = ({currentVote, comment_id, setVoted}) => {
 
     return (
         <div>
-            <button value={vote} onClick={handleClick} disabled={submitted}>
+            <button value={vote} onClick={handleClick}>
                 Vote
             </button>
         </div>
