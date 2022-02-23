@@ -51,7 +51,7 @@ const ReviewsByCategory = () => {
       ) : error ? (
         <p>error!</p>
       ) : (
-        <ul>
+        <ul className={styles.review_ul}>
           {       
           <div>
             Sort Reviews By: <DropDown dropChange={handleChange}/>
@@ -59,22 +59,22 @@ const ReviewsByCategory = () => {
           }
         {reviewsByCategory.map((review) => {
           return (
-            <Link to={`/reviews/${review.review_id}`}>
-              <li key={review.review_id}>
-                <img src={review.review_img_url} alt={review.title} />
-                <div className={styles.title}>{review.title}</div>
-                <div className={styles.date}>
+            <Link className={styles.review_link} to={`/reviews/${review.review_id}`}>
+              <li className={styles.review_ul_li} key={review.review_id}>
+                <img className={styles.review_img} src={review.review_img_url} alt={review.title} />
+                <div className={styles.review_ul_li_div}>{review.title}</div>
+                <div className={styles.review_ul_li_div}>
                   {" "}
                   {dayjs(review.created_at).format("DD/MM/YYYY")}
                 </div>
-                <div className={styles.owner}>
+                <div className={styles.review_ul_li_div}>
                   <Link to={`/users/${review.owner}`}>by {review.owner}</Link>
                 </div>
-                <div className={styles.designer}>
+                <div className={styles.review_ul_li_div}>
                   Designer: {review.designer}
                 </div>
-                <div className={styles.body}>Review: {review.review_body}</div>
-                <div className={styles.votes}>Votes: {review.votes}</div>
+                <div className={styles.review_ul_li_div}>Review: {review.review_body}</div>
+                <div className={styles.review_ul_li_div}>Votes: {review.votes}</div>
               </li>
             </Link>
           );

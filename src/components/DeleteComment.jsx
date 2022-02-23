@@ -5,8 +5,8 @@ import { deleteCommentById } from '../utils/api';
 const DeleteComment = ({ comment_id, setDeletedComment }) => {
 	const [error, setError] = useState(null)
 
-	const handleClick = (e) =>{
-		e.preventDefault();
+	const handleClick = () =>{
+	
 		
 		deleteCommentById(comment_id)
 		.then((res)=>{
@@ -17,7 +17,6 @@ const DeleteComment = ({ comment_id, setDeletedComment }) => {
 		.catch((error) => {
 			setError(true);
 		});
-		// window.location.reload(false);
 
 	}
 

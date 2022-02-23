@@ -15,6 +15,13 @@ NC Games is a website that users can:
 
     - Read the reviews of the games and comments on those reviews;
     - Add comments to game reviews and delete the comments;
+        Adding comment is possible with existing usernames:
+            happyamy2016
+            weegembump
+            jessjelly
+            grumpy19
+            cooljmessy
+            tickle122
     - Vote reviews and comments
 
 How to run this app locally
@@ -27,3 +34,4 @@ Here you go, you are ready to start project.
 Now run the app with "npm start"
 
 Muhsin A.
+muhsin.altintop@gmail.com

@@ -47,7 +47,7 @@ useEffect(()=>{
         ) : error ? (
             <p>Error!</p>
         ) : (
-        <ul>
+        <ul className={styles.review_ul}>
             {
                 <div>
                     Sort Reviews By: <DropDown dropChange={handleChange}/>
@@ -56,15 +56,19 @@ useEffect(()=>{
             {reviews.map((review)=>{
                 return(
                     <Link className={styles.review_link} to={`/reviews/${review.review_id}`}>
-
-                        <li key={review.review_id}>
-                            <img src={review.review_img_url} alt={review.title} />
-                            <div className={styles.title}>{review.title}</div>
-                            <div className={styles.date}>{dayjs(review.created_at).format("DD/MM/YYYY")}</div>
-                            <div className={styles.owner}>by {review.owner}</div>
-                            <div  className={styles.designer}>Designer: {review.designer}</div>
-                            <div  className={styles.review_body}>Review: {review.review_body}</div>
-                            <div  className={styles.votes}> Votes: {review.votes}</div>                                             
+                        <li className={styles.review_ul_li} key={review.review_id}>
+                            <img className={styles.review_img} src={review.review_img_url} alt={review.title} />
+                            <div className={styles.review_ul_li_div}>{review.title}</div>
+                            <div className={styles.review_ul_li_div}>{dayjs(review.created_at).format("DD/MM/YYYY")}</div>
+                            <div>by 
+                            <div className={styles.review_owner}>
+                                {review.owner}
+                            </div>
+                            </div>
+                            <div className={styles.review_ul_li_div}>Designer: {review.designer}</div>
+                            <div className={styles.review_body}>Review: <br />{review.review_body}</div>
+                            <div className={styles.read_more}>Read More...</div>
+                            <div  className={styles.review_ul_li_div}> <br /> Votes: {review.votes}</div>                                             
                         </li>
                     </Link>
                 )

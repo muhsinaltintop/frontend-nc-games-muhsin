@@ -28,6 +28,12 @@ export const getUserByName = (username) => {
     })
 };
 
+export const getAllUsers = () => {
+    return gamesApi.get(`/users`).then((res)=> {
+        return res.data.users;
+    })
+};
+
 export const getCommentsByReview = (review_id) => {
     return gamesApi.get(`/reviews/${review_id}/comments`).then((res) => {
       return res.data.comments;

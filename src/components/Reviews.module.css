@@ -1,167 +1,156 @@
+ul {
+  padding: 0px;
+  list-style: none;
+}
 
-.review {
-    text-align: center;
-  }
-  /* Smartphones (portrait and landscape) ----------- */
-  @media screen and (max-width: 450px) {
+* {
+  align-items: center;
+  text-align: center;
+}
+
+.review_link {
+  text-decoration: none;
+  color: black;
+}
+.review_owner_link {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  background-color: turquoise;
+  box-sizing: border-box;
+  border: 1px black solid;
+  padding: 5px;
+  box-shadow: 5px 5px black;
+}
+
+
+/* Smartphones (portrait and landscape) ----------- */
+@media screen and (max-width: 450px) {
     /* Styles */
-    
-    .review {
-      display: block;
-      clear: both;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .review ul {
-      list-style: none;
-      padding-left: 0px;
-    }
-  
-    .review ul li {
-      margin-top: 1em;
-      margin-bottom: 1em;
-      text-align: center;
-      border: black solid 1px;
-      max-width: 450px;
-      min-width: 300px;
-      padding: 10px;
-      color: black;
-      background-color: #e1e8eb;
-    }
-    
-    .review ul li div {
-      margin: 1em;
-    }
-  
-    .review ul li a {
-      text-align: center;
-      border: white solid 1px;
-      background-color: #3e065f;
-      max-width: 450px;
-      min-width: 300px;
-      padding: 0.5em;
-  
-      color: white;
-    }
-  
-    .review ul li img {
-      display: block;
-      border: black solid 2px;
-      width: 250px;
-      min-width: 240px;
+    .review_owner {
+      box-sizing: border-box;
+      background-color: aqua;
+      width: 90px;
+      padding: 5px;
       margin: auto;
+      border: 1px black solid;
+      box-shadow: 5px 5px;
     }
-  
+
+    .review_ul_li {
+      background-color: darkcyan;
+      border: black 1px solid;
+      width: 70%;
+      margin-left: 15%;
+      margin-right: 15%;
+      margin-top: 10px;
+      padding: 3%;
+      min-width: 330px;
+    }
+    
+    .review_ul_li div {
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
+
+    .review_img {
+      max-width: 400px;
+      border: black 1px solid;
+      width: 95%;
+      min-width: 300px;
+    }
+
     .review_body {
       display: none;
     }
+
+    .read_more {
+     display: none; 
+    }
   }
-  
   /* iPads (portrait and landscape) ----------- */
   @media screen and (min-width: 451px) and (max-width: 920px) {
     /* Styles */
-    .review {
-      display: block;
+    .review_owner {
+      box-sizing: border-box;
+      background-color: aqua;
+      width: 90px;
+      padding: 5px;
       margin: auto;
+      border: 1px black solid;
+      box-shadow: 5px 5px;
     }
-  
-    .review_link {
-      color: black;
-    }
-    .review ul {
-      list-style: none;
+    .review_ul_li {
+      background-color: rosybrown;
+      border: black 1px solid;
+      width: 70%;
+      margin-left: 15%;
+      margin-right: 15%;
+      margin-top: 10px;
+      padding: 3%;
+      min-width: 450px;
     }
     
-    .review ul li {
-      
-      margin-left: auto;
-      margin-right: auto;
-      margin-top: 1em;
-      margin-bottom: 1em;
-      text-align: center;
-      border: black solid 1px;
-      background-color: burlywood;
-      max-width: 460px;
+    .review_ul_li div {
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
+
+
+    .review_img {
+      max-width: 800px;
+      border: black 1px solid;
+      width: 90%;
       min-width: 300px;
-      padding: 10px;
     }
-  
-    .review ul li img {
-      display: block;
-      border: black solid 2px;
-      width: 350px;
-      min-width: 280px;
+
+    .review_body {
+      line-height: 1.5em;
+      height: 4.5em;
+      overflow: hidden;
+    }
+
+    .read_more {
       margin: auto;
-    }
-  
-    .review ul li div {
-      margin: 1em;
-      
-    }
-  
-    .owner a {
-      border: #3e065f solid 1px;
-      background-color: turquoise;
-      padding: 0.6em;
-      color: white;
-      font-weight: bold;
-      box-shadow: black 5px 5px;
+      width: 50%;
+      clear: both;
     }
   }
-  
   /* Desktops and laptops ----------- */
   @media screen and (min-width: 921px) {
     /* Styles */
-    .review {
-      display: block;
-      float: left;
-      padding-bottom: 1em;
-      padding-left: auto;
-      padding-right: auto;
-      width: 100%;
+    .review_owner {
+      box-sizing: border-box;
+      background-color: aqua;
+      width: 90px;
+      padding: 5px;
+      margin: auto;
+      border: 1px black solid;
+      box-shadow: 5px 5px;
     }
-    .review_link {
-      color: black;
+    .review_ul_li {
+      background-color: antiquewhite;
+      border: black 1px solid;
+      width: 70%;
+      margin-left: 15%;
+      margin-right: 15%;
+      margin-top: 10px;
+      padding: 3%;
     }
-    .review ul {
-      list-style: none;
-      width: 80%;
-      padding-left: 10%;
-      padding-right: 10%;
+
+    .review_ul_li div {
+      margin-top: 8px;
+      margin-bottom: 8px;
     }
     
-    .review ul li {
-      margin-top: 1em;
-      margin-bottom: 1em;
-      text-align: center;
-      border: black solid 1px;
-      background-color: burlywood;
+    .review_img {
+      max-width: 800px;
+      border: black 1px solid;
+      width: 80%;
       min-width: 500px;
-      
     }
-  
-    .review ul li img {
-      display: block;
-      border: black solid 2px;
-      width: 70%;
-      min-width: 400px;
-      margin: auto;
-      margin-top: 1em;
-      margin-bottom: 1em;
-    }
-  
-    .review ul li div {
-      margin: 1em;
-     
-    }
-  
-    .owner a {
-      border: #3e065f solid 1px;
-      background-color: turquoise;
-      padding: 0.6em;
-      color: white;
-      font-weight: bold;
-      box-shadow: black 5px 5px;
+
+    .read_more {
+      display: none;
     }
   }
   

@@ -1,39 +1,39 @@
 import React, { useState } from "react";
-import { updateCommentVote } from "../utils/api"
+import { updateCommentVote } from "../utils/api";
 
-const CommentVote = ({currentVote, comment_id, setVoted}) => {
-    const [vote, setVotes] = useState(currentVote);
+const CommentVote = ({currentCommentVote, comment_id, setCommentVoted}) => {
+    const [comment_vote, setCommentVotes] = useState(currentCommentVote);
     const [error, setError] = useState(false);
-    
-    const handleClick = (e) => {
-        e.preventDefault();
-        setVotes((currentVote)=>{
-            return currentVote + 1;
+
+    const handleClick = () => {
+        setCommentVotes((currentCommentVote)=> {
+            return currentCommentVote + 1;
         });
         updateCommentVote(comment_id, 1)
-        .then((res)=>{
+        .then((res) => {
             setError(false);
-            setVoted(true);
+            setCommentVoted(true)
         })
         .catch((err)=>{
-            setError(true);
-        });
-        setVoted(false);
+            setError(false)
+        })
+        setCommentVoted(false);
+
     };
+
     if(error)
     return(
-        <div>
-            <p>Error!</p>
-        </div>
+        <div>Error!</div>
     );
-
+    
     return (
-        <div>
-            <button value={vote} onClick={handleClick}>
-                Vote
-            </button>
-        </div>
-    )
+    <div>
+
+        <button value={comment_vote} onClick={handleClick}>Vote</button>
+    </div>
+)
+
 }
+
 
 export default CommentVote;

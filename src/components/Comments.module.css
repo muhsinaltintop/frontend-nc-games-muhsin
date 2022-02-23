@@ -1,0 +1,52 @@
+ul {
+  padding: 0px;
+  list-style: none;
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media screen and (max-width: 450px) {
+  /* Styles */
+  .comment_ul_li {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    width: 95%;
+    border: 1px solid black;
+    background-color: darkgray;
+    box-shadow: 5px 5px black;
+    padding: 1.5%;
+  }
+
+}  
+/* iPads (portrait and landscape) ----------- */
+@media screen and (min-width: 451px) and (max-width: 920px) {
+  /* Styles */
+  .comment_ul_li {
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    width: 90%;
+    border: 1px solid black;
+    background-color: maroon;
+    box-shadow: 5px 5px black;
+    padding: 1.5%;
+  }
+}  
+
+/* Desktops and laptops ----------- */
+@media screen and (min-width: 921px) {
+  /* Styles */
+  .comment_ul_li {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    width: 60%;
+    border: 1px solid black;
+    background-color: seagreen;
+    box-shadow: 5px 5px;
+    padding: 1.5%;
+  }
+
+  
+}

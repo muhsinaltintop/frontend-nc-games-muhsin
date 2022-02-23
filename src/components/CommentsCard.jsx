@@ -1,66 +1,57 @@
-import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { getCommentsByReview } from "../utils/api";
 import dayjs from "dayjs";
-import CommentVote from "./CommentVote";
+import React, { useEffect, useState } from "react";
+import { getCommentsByReview } from "../utils/api";
 import DeleteComment from "./DeleteComment";
+import styles from './Comments.module.css';
+import CommentVote from "./CommentVote";
 
-const CommentsCard = ({ commented }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const { review_id } = useParams();
-  const [comments, setComments] = useState([]);
-  const [voted, setVoted] = useState(false);
-  const [deleted, setDeletedComment ] = useState("null")
+const CommentsCard = ({review_id, isCommented}) => {
+    const[comments, setComments] = useState([]);
+    const[commentVoted, setCommentVoted] = useState(false);
+    const[deleted, setDeletedComment] = useState(null);
+    
+    
+        useEffect(() => {
+            getCommentsByReview(review_id)
+            .then((commentsFromApi) => {
+            setComments(commentsFromApi);
+            }).catch((error)=>{
+                console.log(error);
+            })
+          }, [review_id, isCommented, deleted, commentVoted]);
+        
+          return (
+            <>
+            { comments.length > 0 ? (
 
-
-  const toggleOpen = () => setIsOpen((currOpen) => !currOpen);
-
-
-  useEffect(() => {
-    getCommentsByReview(review_id)
-    .then((commentsFromApi) => {
-    setComments(commentsFromApi);
-    })
-  }, [review_id, voted, deleted]);
-
-  return (
-        <>
-        {comments.length < 1 ? ( 
-         <p>
-           No Comment!
-         </p> 
-         ) : (
-          <button onClick={toggleOpen}>
-        {isOpen ? `Hide Comments` : `Show Comments of ${review_id}`}
-      </button>
-      )}       
-      {isOpen ? (
-        <>
-        <ul>
-                  {comments.map((comment) => {
-                    return (
-                      
-                      
-                      <li key={comment.comment_id}>
-                      <div>{comment.author}</div>
-                      <div>{comment.body}</div>
-                      <div> {dayjs(comment.created_at).format("DD/MM/YYYY")}</div>
-                      <div>Votes: {comment.votes}</div>
-                      <div><CommentVote
-                      currVotes={comment.votes}
-                      comment_id={comment.comment_id}
-                      setVoted={setVoted} />
-                      </div>
-                      <div><DeleteComment comment_id={comment.comment_id} setDeletedComment={setDeletedComment} /></div>
-                      </li>
-                      );
-                      })}
-                </ul></>
-                
-                ): null }
-
-            </>
-)}
               
-
+                <ul className={styles.comment_ul}>
+                          <li> <h2> Comments:</h2> </li>
+                          {comments.map((comment) => {
+                            return (
+                            
+                              
+                              <li className={styles.comment_ul_li} key={comment.comment_id}>
+                              <div className={styles.comment_author}>{comment.author}</div>
+                              <div className={styles.comment_body}>{comment.body}</div>
+                              <div className={styles.comment_date}> {dayjs(comment.created_at).format("DD/MM/YYYY")}</div>
+                              <div className={styles.comment_votes}>Votes: {comment.votes}</div>
+                              <div><CommentVote 
+                              currentCommentVote={comment.votes}
+                              comment_id={comment.comment_id}
+                              setCommentVoted={setCommentVoted}
+                              />
+                              </div>
+                              <div className={styles.comment_button}><DeleteComment comment_id={comment.comment_id} setDeletedComment={setDeletedComment}/></div>
+                              </li> 
+                              );
+                            })}
+                            </ul>
+                            ) : (
+                              <p>No Comment!</p>
+                              )
+                            }
+          </>
+                        
+          )}
 export default CommentsCard;

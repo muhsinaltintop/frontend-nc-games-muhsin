@@ -1,147 +1,44 @@
-/* Smartphones (portrait and landscape) ----------- */
-@media screen and (max-device-width: 450px) {
-  /* Styles */
-  main {
-    width: 100%;
-    text-align: center;
-      }
+ul {
+  padding: 0px;
+  list-style: none;
+}
+ /* Smartphones (portrait and landscape) ----------- */
+  @media screen and (max-width: 450px) {
+    /* Styles */
     
-      .user_header {
-          min-width: 300px;
-          width: 100%;  
-          margin-top: 10px;
-          border: solid 1px;
-          background-color: #8e05c2;
-          color: whitesmoke;
-          padding-top: 5px;
-          padding-bottom: 5px;
-          border: #3e065f 5px solid;
-        
-      }
-  
-      .avatar{
-          margin-top: 10px;
-          margin-left: auto;
-          margin-right: auto;
-          width: 200px;
-          height: 200px;
-          border-radius: 50%;
-          overflow: hidden;
-          border: 2px #8e05c2 solid;
-      }
-      
-      .avatar img {
-          height: 100%;
-          width: 100%;
-          object-fit: cover;
+
+}  
+  /* iPads (portrait and landscape) ----------- */
+  @media screen and (min-width: 451px) and (max-width: 920px) {
+    /* Styles */
+    .user_ul_li {
+       font-weight: bold;
+       margin: 0px;
+       font-weight: bold;
+       text-align: left;
     
-  
-      }
-  
-      .name {
-        padding-top: 1em;
-      }
-      
-      
-  
-  
-    }    
-    
-    /* iPads (portrait and landscape) ----------- */
-    @media screen and (min-device-width: 451px) and (max-device-width: 920px) {
-      /* Styles */
-      main {
-        width: 100%;
-        text-align: center;
-      }
-    
-      .user_header {
-          min-width: 451px;
-          max-width: 500px;
-          width: 100%;
-          margin-left: auto;
-          margin-right: auto;
-          margin-top: 10px;
-          border: solid 1px;
-          background-color: burlywood;
-          color: whitesmoke;
-          padding-top: 5px;
-          padding-bottom: 5px;
-          border: black 5px solid;
-        
-      }
-  
-      .avatar{
-          margin-top: 10px;
-          margin-left: auto;
-          margin-right: auto;
-          width: 300px;
-          height: 300px;
-          border-radius: 50%;
-          overflow: hidden;
-          border: 2px #8e05c2 solid;
-      }
-      
-      .avatar img {
-          height: 100%;
-          width: 100%;
-          object-fit: cover;
-    
-  
-      }
-  
-      .name {
-        padding-top: 1em;
-      }
     }
     
-    
-    /* Desktops and laptops ----------- */
-    @media screen and (min-width: 921px) {
-      /* Styles */
-      main {
-        width: 100%;
-        text-align: center;
+      .user_ul_li_name {
+        text-align: left;
+        margin: 0px;
       }
-    
-      .user_header {
-          min-width: 451px;
-          max-width: 500px;
-          width: 100%;
-          margin-left: auto;
-          margin-right: auto;
-          margin-top: 20px;
-          border: solid 1px;
-          background-color: turquoise;
-          color: whitesmoke;
-          padding-top: 5px;
-          padding-bottom: 5px;
-          border: black 5px solid;
-        
-      }
+}  
   
-      .avatar{
-          margin-top: 10px;
-          margin-left: auto;
-          margin-right: auto;
-          width: 300px;
-          height: 300px;
-          border-radius: 50%;
-          overflow: hidden;
-          border: 2px #8e05c2 solid;
-          box-shadow: 5px 5px;
-      }
-      
-      .avatar img {
-          height: 100%;
-          width: 100%;
-          object-fit: cover;
-    
-  
-      }
-  
-      .name {
-        padding-top: 1em;
-      }
-  
-    } 
+  /* Desktops and laptops ----------- */
+  @media screen and (min-width: 921px) {
+    /* Styles */
+
+.user_ul_li {
+   font-weight: bold;
+   margin: 0px;
+   font-weight: bold;
+   text-align: left;
+
+}
+
+  .user_ul_li_name {
+    text-align: left;
+    margin: 0px;
+  }
+}

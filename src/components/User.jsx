@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getUserByName } from "../utils/api";
+import { getAllUsers, getUserByName } from "../utils/api";
 import styles from "./User.module.css";
 
-const User = () => {
+export const User = () => {
   const { username } = useParams();
   const [user, setUser] = useState("");
 
@@ -18,13 +18,9 @@ const User = () => {
       <h2 className={styles.user_header}>USER {user.username}</h2>
       <ul>
         <li key={user.username} className={styles.username}>
-        </li>
-        
-        
+        </li>       
         <li className={styles.avatar}>
-          
         <img src={user.avatar_url} alt="" />
-          
         </li>
         <li className={styles.name} key={user.name}>{user.name}</li>
       </ul>
@@ -32,4 +28,38 @@ const User = () => {
   );
 };
 
-export default User;
+export const Users = () => {
+  const [users, setUsers] = useState([]);
+
+  useEffect(()=> {
+
+    getAllUsers().then((users) => {
+      setUsers(users);
+    });
+
+
+
+  }, []);
+  return (
+    <main className={styles.user}>
+      <ul className={styles.user_ul}>
+        <li className={styles.user_ul_li}>User List:</li>
+          {users.map((user) => {
+            return(
+              
+              <li className={styles.user_ul_li_name} key={user.user_id}>
+                {user.username}
+              </li>
+            )
+          })
+}
+      </ul>
+    </main>
+
+
+
+  );
+
+
+}
+

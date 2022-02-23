@@ -1,9 +1,11 @@
-.addComment {
+.comment_form {
     text-align: left;
-    }
+}
 
-.addComment_body textarea {
-      width: 600px;
-      height: 200px;
-    }
+.comment_body textarea {
+    max-width: 600px;
+    min-width: 169px;
+    width: 60%;
+    height: 200px;
     
+}

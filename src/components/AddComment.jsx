@@ -1,54 +1,56 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
-import { postCommentByReviewId } from "../utils/api";
+import {  postCommentByReviewId } from "../utils/api";
+import { Users } from "./User";
 import styles from "./AddComment.module.css";
 
-const AddComment = ({ setComment }) => {
-  const [body, setBody] = useState("");
-  const [username, setUsername] = useState("");
-  const {review_id} = useParams();
+const AddComment = ({review_id, setIsCommented, users}) => {
+    const[username, setUsername] = useState("");
+    const[comment, setComment] = useState("");
+    const isCommentEmpty = comment.length === 0;
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        postCommentByReviewId(review_id, username, comment)
+        .then((res)=> {
+            setUsername("");
+            setComment("");
+            setIsCommented(true);    
+        })
+        .catch((err)=> {
+            console.log(err);
+            setIsCommented(false);
+        })
+    }
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    postCommentByReviewId(review_id, username, body)
-      .then((res) => {
-        setComment(true);
-      })
-      .catch((error) => {
-        setComment(false);
-      });
-  };
- 
-  return (
-    <div className={styles.addComment}>
-      
-      
-        <form onSubmit={handleSubmit}>
-        <label className={styles.addComment_username}>
-            Username:
+    return (
+        <>
+        <h3>Plese use one of the following usernames:</h3>
+        <br />
+        <Users />
+        <form className={styles.comment_form} onSubmit={handleSubmit}>
+            <label className={styles.comment_username}>
+                Username:
+                <br />
+                <input 
+                value={username}
+                onChange={(event) => setUsername(event.target.value)}
+                />
+            </label>
             <br />
-            <input
-              value={username}
-              onChange={(event) => setUsername(event.target.value)}
-            />
-          </label>
-          <br />
-          <label className={styles.addComment_body}>
-            Comment:
+            <label className={styles.comment_body}>
+                Comment:
+                <br />
+                <textarea 
+                
+                value={comment}
+                onChange={(event) => setComment(event.target.value)}
+                />
+            </label>
             <br />
-            <textarea
-              value={body}
-              onChange={(event) => setBody(event.target.value)}
-            />
-          </label>
-          <p>
-
-          <button type="submit">Sumbit Comment</button>
-          </p>
+            <button type="submit" disabled={isCommentEmpty}>Submit Comment!</button>
+            
         </form>
-    </div>
-  );
-};
-
+        </>
+    )
+}
 export default AddComment;
