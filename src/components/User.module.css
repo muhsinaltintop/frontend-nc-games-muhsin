@@ -2,12 +2,27 @@ ul {
   padding: 0px;
   list-style: none;
 }
+
+.username {
+margin: 10%;  
+}
+
+.avatar {
+  margin: 10%;  
+  }
+
+.name {
+  margin: 10%;  
+}
+
+/* .username {
+  margin: 10%;  
+  } */
+
  /* Smartphones (portrait and landscape) ----------- */
   @media screen and (max-width: 450px) {
     /* Styles */
-    main ul li {
-      margin: 10%;
-    }
+
 
     .user {
       border: 2px black solid;
@@ -47,8 +62,13 @@ ul {
   /* iPads (portrait and landscape) ----------- */
   @media screen and (min-width: 451px) and (max-width: 920px) {
     /* Styles */
-    main ul li {
-      margin: 10%;
+
+    .users_userlist {
+      text-align: left;
+    }
+  
+    .users_username {
+      text-align: left;
     }
 
     .user {
@@ -87,10 +107,7 @@ ul {
   @media screen and (min-width: 921px) {
     /* Styles */
 
-    main ul li {
-      margin: 10%;
-    }
-
+   
     .user {
       border: 2px black solid;
       width: 65%;
@@ -110,6 +127,14 @@ ul {
       margin-right: auto;
       border: 1px solid black;
       box-shadow: black 5px 5px;
+    }
+
+    .users_userlist {
+      text-align: left;
+    }
+  
+    .users_username {
+      text-align: left;
     }
 
     .avatar img {

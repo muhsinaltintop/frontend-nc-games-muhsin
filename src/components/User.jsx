@@ -41,13 +41,13 @@ export const Users = () => {
 
   }, []);
   return (
-    <main className={styles.user}>
-      <ul className={styles.user_ul}>
-        <li className={styles.user_ul_li}>User List:</li>
+    <main className={styles.users} >
+      <ul className={styles.users_user}>
+        <li className={styles.users_userlist}>User List:</li>
           {users.map((user) => {
             return(
               
-              <li className={styles.user_ul_li_name} key={user.user_id}>
+              <li className={styles.users_username} key={user.user_id}>
                 {user.username}
               </li>
             )
