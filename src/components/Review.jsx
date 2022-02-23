@@ -35,6 +35,7 @@ const Review = () => {
                     <p>Error!</p>
                     ) : (
                         <ul className={styles.review_ul}>
+                            <h3>Review {review.review_id}</h3>
                     <li className={styles.review_ul_li} key={review.review_id}>
                      
                      <ReviewCard

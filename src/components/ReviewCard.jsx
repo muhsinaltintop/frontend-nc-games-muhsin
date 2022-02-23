@@ -25,14 +25,15 @@ const ReviewCard = ({ username, comment }) => {
        
                 <>
                 
-                    <h1>Review: {review.review_id}</h1>
+                    
                         <img className={styles.review_img} src={review.review_img_url} alt={review.title} />
                         <div className={styles.review_ul_li_div}>{review.title}</div>
                         <div className={styles.review_ul_li_div}>
                             {dayjs(review.created_at).format("DD/MM/YYYY")}
                         </div>
-                        <div className={styles.review_owner}>
-                        <Link className={styles.review_owner_link}  id="ownerlink" to={`/users/${review.owner}`}>by {review.owner}</Link>
+                        <div className={styles.review_card_owner}>
+                        by
+                        <Link className={styles.review_owner_link}  id="ownerlink" to={`/users/${review.owner}`}> {review.owner}</Link>
                         </div>
                         <div className={styles.review_ul_li_div}>
                             Designer: {review.designer}

@@ -12,7 +12,7 @@ ul {
   text-decoration: none;
   color: black;
 }
-.review_owner_link {
+/* .review_owner_link {
   margin-top: 2px;
   margin-bottom: 2px;
   background-color: turquoise;
@@ -20,20 +20,20 @@ ul {
   border: 1px black solid;
   padding: 5px;
   box-shadow: 5px 5px black;
-}
+} */
 
 
 /* Smartphones (portrait and landscape) ----------- */
 @media screen and (max-width: 450px) {
     /* Styles */
-    .review_owner {
+    .review_owner_link {
       box-sizing: border-box;
       background-color: aqua;
       width: 90px;
       padding: 5px;
       margin: auto;
       border: 1px black solid;
-      box-shadow: 5px 5px;
+      box-shadow: 5px 5px black;
     }
 
     .review_ul_li {
@@ -45,6 +45,24 @@ ul {
       margin-top: 10px;
       padding: 3%;
       min-width: 330px;
+    }
+
+    .review_card_owner {
+      margin-bottom: 22px;
+      margin-top: 12px;
+      }
+
+
+    .review_owner {
+      margin-bottom: 22px;
+      margin-top: 12px;
+      background-color: aquamarine;
+      width: 90px;
+      padding: 5px;
+      margin-left: auto;
+      margin-right: auto;
+      border: 1px black solid;
+      box-shadow: 5px 5px black;
     }
     
     .review_ul_li div {
@@ -70,15 +88,34 @@ ul {
   /* iPads (portrait and landscape) ----------- */
   @media screen and (min-width: 451px) and (max-width: 920px) {
     /* Styles */
-    .review_owner {
+    .review_owner_link {
       box-sizing: border-box;
       background-color: aqua;
       width: 90px;
       padding: 5px;
       margin: auto;
       border: 1px black solid;
-      box-shadow: 5px 5px;
+      box-shadow: 5px 5px black;
     }
+
+    .review_card_owner {
+      margin-bottom: 22px;
+      margin-top: 12px;
+      }
+
+
+    .review_owner {
+      margin-bottom: 22px;
+      margin-top: 12px;
+      background-color: aquamarine;
+      width: 90px;
+      padding: 5px;
+      margin-left: auto;
+      margin-right: auto;
+      border: 1px black solid;
+      box-shadow: 5px 5px black;
+    }
+
     .review_ul_li {
       background-color: rosybrown;
       border: black 1px solid;
@@ -118,15 +155,37 @@ ul {
   /* Desktops and laptops ----------- */
   @media screen and (min-width: 921px) {
     /* Styles */
-    .review_owner {
+    .review_owner_link {
       box-sizing: border-box;
       background-color: aqua;
       width: 90px;
       padding: 5px;
-      margin: auto;
+      margin-right: auto;
+      margin-left: auto;
       border: 1px black solid;
-      box-shadow: 5px 5px;
+      box-shadow: 5px 5px black;
+      margin-top: 12px;
+      margin-bottom: 12px;
     }
+
+    .review_card_owner {
+      margin-bottom: 22px;
+      margin-top: 12px;
+      }
+
+
+    .review_owner {
+      margin-bottom: 22px;
+      margin-top: 12px;
+      background-color: aquamarine;
+      width: 90px;
+      padding: 5px;
+      margin-left: auto;
+      margin-right: auto;
+      border: 1px black solid;
+      box-shadow: 5px 5px black;
+    }
+
     .review_ul_li {
       background-color: antiquewhite;
       border: black 1px solid;
@@ -135,11 +194,6 @@ ul {
       margin-right: 15%;
       margin-top: 10px;
       padding: 3%;
-    }
-
-    .review_ul_li div {
-      margin-top: 8px;
-      margin-bottom: 8px;
     }
     
     .review_img {
