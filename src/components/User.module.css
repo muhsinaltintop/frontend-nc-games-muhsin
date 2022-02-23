@@ -5,40 +5,121 @@ ul {
  /* Smartphones (portrait and landscape) ----------- */
   @media screen and (max-width: 450px) {
     /* Styles */
-    
+    main ul li {
+      margin: 10%;
+    }
+
+    .user {
+      border: 2px black solid;
+      width: 90%;
+      margin-right: auto;
+      margin-left: auto;
+      min-height: 300px;
+      margin-top: 10%;
+      background-color: #008b8b;
+      min-width: 350px;
+
+    }
+    .user_header{
+      background-color: turquoise;
+      width: 60%;
+      color: black;
+      margin-top: 5%;
+      margin-left: auto;
+      margin-right: auto;
+      border: 1px solid black;
+      box-shadow: black 5px 5px;
+      padding: 5px;
+      min-width: 300px;
+    }
+
+    .avatar img {
+      width: 95%;
+      border: 2px black solid;
+      padding: 0px;
+      margin: 0px;
+      border-radius: 50%;
+      box-shadow: 5px 5px black;
+    }
+
 
 }  
   /* iPads (portrait and landscape) ----------- */
   @media screen and (min-width: 451px) and (max-width: 920px) {
     /* Styles */
-    .user_ul_li {
-       font-weight: bold;
-       margin: 0px;
-       font-weight: bold;
-       text-align: left;
-    
+    main ul li {
+      margin: 10%;
     }
-    
-      .user_ul_li_name {
-        text-align: left;
-        margin: 0px;
-      }
+
+    .user {
+      border: 2px black solid;
+      width: 80%;
+      margin-right: auto;
+      margin-left: auto;
+      min-width: 450px;
+      margin-top: 10%;
+      background-color: #bc8f8f;
+
+    }
+    .user_header{
+      background-color: turquoise;
+      width: 60%;
+      color: black;
+      margin-top: 5%;
+      margin-left: auto;
+      margin-right: auto;
+      border: 1px solid black;
+      box-shadow: black 5px 5px;
+    }
+
+    .avatar img {
+      border: 2px black solid;
+      padding: 0px;
+      margin: 0px;
+      border-radius: 50%;
+      box-shadow: 5px 5px black;
+      width: 70%;
+    }
+
 }  
   
   /* Desktops and laptops ----------- */
   @media screen and (min-width: 921px) {
     /* Styles */
 
-.user_ul_li {
-   font-weight: bold;
-   margin: 0px;
-   font-weight: bold;
-   text-align: left;
+    main ul li {
+      margin: 10%;
+    }
 
-}
+    .user {
+      border: 2px black solid;
+      width: 65%;
+      margin-right: auto;
+      margin-left: auto;
+      min-height: 600px;
+      margin-top: 10%;
+      background-color: bisque;
 
-  .user_ul_li_name {
-    text-align: left;
-    margin: 0px;
-  }
+    }
+    .user_header{
+      background-color: turquoise;
+      width: 60%;
+      color: black;
+      margin-top: 5%;
+      margin-left: auto;
+      margin-right: auto;
+      border: 1px solid black;
+      box-shadow: black 5px 5px;
+    }
+
+    .avatar img {
+      width: 65%;
+      border: 2px black solid;
+      padding: 0px;
+      margin: 0px;
+      border-radius: 50%;
+      box-shadow: 5px 5px black;
+    }
+
+
 }

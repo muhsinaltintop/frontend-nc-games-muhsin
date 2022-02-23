@@ -14,7 +14,7 @@ export const User = () => {
   }, [username]);
 
   return (
-    <main>
+    <main className={styles.user}>
       <h2 className={styles.user_header}>USER {user.username}</h2>
       <ul>
         <li key={user.username} className={styles.username}>
