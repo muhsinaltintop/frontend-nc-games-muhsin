@@ -6,17 +6,35 @@ import styles from "./User.module.css";
 export const User = () => {
   const { username } = useParams();
   const [user, setUser] = useState("");
+  const [ isLoading, setIsLoading ] = useState(true);
+    const [ error, setError ] = useState(null);
+
 
   useEffect(() => {
-    getUserByName(username).then((user) => {
-      setUser(user);
-    });
+        setIsLoading(true);
+        setError(null);
+        getUserByName(username)
+          .then((user) => {
+            setUser(user);
+            setIsLoading(false);
+
+    }).catch((err)=>{
+      setError({ err })
+    })
+    ;
   }, [username]);
 
   return (
+
+
     <main className={styles.user}>
-      <h2 className={styles.user_header}>USER {user.username}</h2>
+      { isLoading ? (
+        <p>Loading...</p>
+        ) : error ? (
+          <p>Error!</p>
+          ) : (
       <ul>
+        <h2 className={styles.user_header}>USER {user.username}</h2>
         <li key={user.username} className={styles.username}>
         </li>       
         <li className={styles.avatar}>
@@ -24,6 +42,7 @@ export const User = () => {
         </li>
         <li className={styles.name} key={user.name}>{user.name}</li>
       </ul>
+      )}
     </main>
   );
 };
@@ -55,11 +74,6 @@ export const Users = () => {
 }
       </ul>
     </main>
-
-
-
   );
-
-
 }
 

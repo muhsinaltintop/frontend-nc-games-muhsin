@@ -73,7 +73,7 @@ margin: 10%;
 
     .user {
       border: 2px black solid;
-      width: 80%;
+      width: 60%;
       margin-right: auto;
       margin-left: auto;
       min-width: 450px;
@@ -110,12 +110,13 @@ margin: 10%;
    
     .user {
       border: 2px black solid;
-      width: 65%;
+      width: 40%;
+      height: 100%;
       margin-right: auto;
       margin-left: auto;
-      min-height: 600px;
-      margin-top: 10%;
+      margin-top: 3%;
       background-color: bisque;
+      max-height: 500px;
 
     }
     .user_header{
