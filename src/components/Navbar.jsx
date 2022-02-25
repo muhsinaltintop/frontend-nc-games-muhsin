@@ -23,8 +23,8 @@ const Navbar = () => {
       >
         {categories.map((category) => {
           return (
-            <Link to={`category/${category.slug}/reviews`}>
-              <li key={category.slug} className={styles.menuitem} >
+            <Link key={category.slug} to={`category/${category.slug}/reviews`}>
+              <li className={styles.menuitem} >
                 <h2>
                   <span>{category.slug}</span>
                 </h2>
@@ -37,9 +37,9 @@ const Navbar = () => {
       onClick={() => setIsMobile(!isMobile)}
       >
         {isMobile ? (
-        <i className="fas fa-times"></i>
+        <i className="fas fa-times"/>
         ) : (
-          <i className="fas fa-bars"></i>
+          <i className="fas fa-bars"/>
         )}
       </button>
     </nav>

@@ -27,20 +27,20 @@ export const User = () => {
   return (
 
 
-    <main className={styles.user}>
+    <main className={styles.user} key={Math.random().toString(36).substr(2, 9)}>
       { isLoading ? (
         <p>Loading...</p>
         ) : error ? (
           <p>Error!</p>
           ) : (
-      <ul>
+      <ul >
         <h2 className={styles.user_header}>USER {user.username}</h2>
-        <li key={user.username} className={styles.username}>
+        <li className={styles.username}>
         </li>       
         <li className={styles.avatar}>
         <img src={user.avatar_url} alt="" />
         </li>
-        <li className={styles.name} key={user.name}>{user.name}</li>
+        <li className={styles.name} >{user.name}</li>
       </ul>
       )}
     </main>
@@ -61,12 +61,13 @@ export const Users = () => {
   }, []);
   return (
     <main className={styles.users} >
+              <h3 className={styles.users_userlist} >User List:</h3>
+
       <ul className={styles.users_user}>
-        <li className={styles.users_userlist}>User List:</li>
           {users.map((user) => {
             return(
               
-              <li className={styles.users_username} key={user.user_id}>
+              <li className={styles.users_username} key={user.name}>
                 {user.username}
               </li>
             )

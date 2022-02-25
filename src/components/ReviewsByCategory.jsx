@@ -59,24 +59,22 @@ const ReviewsByCategory = () => {
           }
         {reviewsByCategory.map((review) => {
           return (
-            <Link className={styles.review_link} to={`/reviews/${review.review_id}`}>
-              <li className={styles.review_ul_li} key={review.review_id}>
-                <img className={styles.review_img} src={review.review_img_url} alt={review.title} />
-                <div className={styles.review_ul_li_div}>{review.title}</div>
-                <div className={styles.review_ul_li_div}>
-                  {" "}
-                  {dayjs(review.created_at).format("DD/MM/YYYY")}
-                </div>
-                <div className={styles.review_ul_li_div}>
-                  <Link to={`/users/${review.owner}`}>by {review.owner}</Link>
-                </div>
-                <div className={styles.review_ul_li_div}>
-                  Designer: {review.designer}
-                </div>
-                <div className={styles.review_ul_li_div}>Review: {review.review_body}</div>
-                <div className={styles.review_ul_li_div}>Votes: {review.votes}</div>
-              </li>
-            </Link>
+            <Link key={review.review_id} className={styles.review_link} to={`/reviews/${review.review_id}`}>
+                        <li className={styles.review_ul_li} >
+                            <img className={styles.review_img} src={review.review_img_url} alt={review.title} />
+                            <div className={styles.review_ul_li_div}>{review.title}</div>
+                            <div className={styles.review_ul_li_div}>{dayjs(review.created_at).format("DD/MM/YYYY")}</div>
+                            <div>by 
+                            <div className={styles.review_owner}>
+                                {review.owner}
+                            </div>
+                            </div>
+                            <div className={styles.review_ul_li_div}>Designer: {review.designer}</div>
+                            <div className={styles.review_body}>Review: <br />{review.review_body}</div>
+                            <div className={styles.read_more}>Read More...</div>
+                            <div  className={styles.review_ul_li_div}> <br /> Votes: {review.votes}</div>                                             
+                        </li>
+                    </Link>
           );
         })}
       </ul>

@@ -14,7 +14,7 @@ const DropDown = ({dropChange}) => {
           <option value="sort_by=title&order=DESC">Title Z-A</option>
   
   
-          sort_by=review_id
+          
         </select>
       </form>
     )

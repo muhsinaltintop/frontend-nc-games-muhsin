@@ -55,8 +55,8 @@ useEffect(()=>{
             }
             {reviews.map((review)=>{
                 return(
-                    <Link className={styles.review_link} to={`/reviews/${review.review_id}`}>
-                        <li className={styles.review_ul_li} key={review.review_id}>
+                    <Link key={review.review_id} className={styles.review_link} to={`/reviews/${review.review_id}`}>
+                        <li className={styles.review_ul_li} >
                             <img className={styles.review_img} src={review.review_img_url} alt={review.title} />
                             <div className={styles.review_ul_li_div}>{review.title}</div>
                             <div className={styles.review_ul_li_div}>{dayjs(review.created_at).format("DD/MM/YYYY")}</div>
