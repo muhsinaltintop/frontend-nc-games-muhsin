@@ -13,14 +13,6 @@ const ReviewUpVote = ({currentVote, id, setVoted}) => {
 
         })
         setVoted(false);
-
-        // updateCommentVote(id, 1)
-        // .then((res) => {
-        //     setVoted(true)
-
-        // })
-        // setVoted(false)
-            console.log(vote, "vote in the Vote");
     };
 
     return (

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { updateCommentVote } from "../utils/api";
 
-const Vote = ({currentVote, id, setVoted}) => {
+const CommentVote = ({currentVote, id, setVoted}) => {
     const [vote, setVotes] = useState("");
     
     const handleClick = () => {
@@ -14,7 +14,6 @@ const Vote = ({currentVote, id, setVoted}) => {
         })
         setVoted(false);
 
-            console.log(vote, "vote in the Vote");
     };
 
     return (
@@ -26,4 +25,4 @@ const Vote = ({currentVote, id, setVoted}) => {
 }
 
 
-export default Vote;
+export default CommentVote;

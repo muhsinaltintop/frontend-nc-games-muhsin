@@ -3,33 +3,21 @@ import { deleteCommentById } from '../utils/api';
 
 
 const DeleteComment = ({ comment_id, setDeletedComment }) => {
-	const [error, setError] = useState(null)
+	const [removeComment, setRemoveComment] = useState("");
 
-	const handleClick = () =>{
-	
-		
+	const handleDelete = () =>{
+		setRemoveComment(removeComment);	
 		deleteCommentById(comment_id)
 		.then((res)=>{
-			setError(null)
 			setDeletedComment(true);
-			return res;
 		})
-		.catch((error) => {
-			setError(true);
-		});
+			setDeletedComment(false);
 
 	}
 
 	return (
 		<>
-		{error ? (
-			<p>error!</p>
-
-		) : (
-	
-			<button onClick={handleClick}>Delete</button>
-		
-		)}
+			<button value={comment_id} onClick={handleDelete}>Delete</button>
 		</>
         
 	);

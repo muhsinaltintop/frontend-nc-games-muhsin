@@ -3,12 +3,14 @@ import React, { useEffect, useState } from "react";
 import { getCommentsByReview } from "../utils/api";
 import DeleteComment from "./DeleteComment";
 import styles from './Comments.module.css';
-import Vote from "./Vote";
+import AddComment from "./AddComment";
+import CommentVote from "./CommentVote";
 
-const Comments = ({review_id, isCommented}) => {
+const Comments = ({review_id}) => {
     const[comments, setComments] = useState([]);
     const[voted, setVoted] = useState(false);
     const[deleted, setDeletedComment] = useState(null);
+    const[ commented, setCommented] = useState(null);
     
     
         useEffect(() => {
@@ -18,7 +20,7 @@ const Comments = ({review_id, isCommented}) => {
             }).catch((error)=>{
                 console.log(error);
             })
-          }, [review_id, isCommented, deleted, voted]);
+          }, [review_id, deleted, voted, commented]);
         
           return (
             <>
@@ -36,22 +38,30 @@ const Comments = ({review_id, isCommented}) => {
                               <div className={styles.comment_body}>{comment.body}</div>
                               <div className={styles.comment_date}> {dayjs(comment.created_at).format("DD/MM/YYYY")}</div>
                               <div className={styles.comment_votes}>Votes: {comment.votes}</div>
-                              <div><Vote 
+                              <div><CommentVote 
                               currentVote={comment.votes}
                               id={comment.comment_id}
                               setVoted={setVoted}
                               />
                               </div>
-                              <div className={styles.comment_button}><DeleteComment comment_id={comment.comment_id} setDeletedComment={setDeletedComment}/></div>
+                              <div className={styles.comment_button}><DeleteComment comment_id={comment.comment_id} setDeletedComment={setDeletedComment} comments={comments}/></div>
                               </li> 
                               );
                             })}
-                            </ul>
+                  </ul>
                             ) : (
                               <p>No Comment!</p>
                               )
                             }
+                            <div>
+                            <AddComment 
+                            review_id={review_id} 
+                            currentComments={comments}
+                            setCommented={setCommented}
+                            />
+                        </div>
           </>
                         
           )}
+
 export default Comments;

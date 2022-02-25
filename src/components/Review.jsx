@@ -2,13 +2,12 @@ import  dayjs  from "dayjs";
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getReview } from "../utils/api";
-import AddComment from "./AddComment";
 import Comments from "./Comments";
 import styles from "./Reviews.module.css"
 import ReviewVote from "./ReviewVotes";
 
 
-const Review = ({ username, comment, isCommented }) => {
+const Review = ({ isCommented }) => {
     const [ review, setReview ] = useState({});
     const { review_id } = useParams();
     const [ isLoading, setIsLoading ] = useState(true);
@@ -58,14 +57,11 @@ const Review = ({ username, comment, isCommented }) => {
                         <div className={styles.review_body_card}>
                             Review: {review.review_body}
                         </div>
-                        <div><ReviewVote/>
+                        <div><ReviewVote />
                         </div>
                         
                         <div>
                            <Comments review_id={review_id} isCommented={isCommented}/>                     
-                        </div>
-                        <div>
-                            <AddComment review_id={review_id} username={username} comment={comment} isCommented={isCommented}  />
                         </div>
                         </li>
 
