@@ -1,13 +1,19 @@
 import React, { useState } from "react";
-import { updateReviewVote } from "../utils/api";
+import axios from "axios";
 
-const ReviewUpVote = ({currentVote, id, setVoted}) => {
+const gamesApi = axios.create({
+    baseURL: "https://muhsinncgames.herokuapp.com/api",
+});
+
+
+const UpVote = ({currentVote, id, setVoted, path}) => {
     const [vote, setVotes] = useState("");
     
     const handleClick = () => {
         setVotes(currentVote);
         setVotes(currentVote => currentVote + 1);
-        updateReviewVote(id, 1)
+        
+        gamesApi.patch(`/${path}/${id}`, { inc_votes: 1 })
         .then((res) => {
             setVoted(true)
 
@@ -24,4 +30,4 @@ const ReviewUpVote = ({currentVote, id, setVoted}) => {
 }
 
 
-export default ReviewUpVote;
+export default UpVote;

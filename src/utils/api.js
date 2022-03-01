@@ -50,18 +50,6 @@ export const deleteCommentById = (comment_id) => {
     return gamesApi.delete(`/comments/${comment_id}`).then((res)=>{
     })
 }
-  
-export const updateCommentVote = (comment_id, inc_votes) => {
-    return gamesApi.patch(`/comments/${comment_id}`, { inc_votes: inc_votes }).then((res)=>{
-      return res.data.comment;
-    })
-}
-
-export const updateReviewVote = (review_id, inc_votes) => {
-    return gamesApi.patch(`/reviews/${review_id}`, { inc_votes: inc_votes }).then((res)=>{
-      return res.data.review;
-    })
-}
 
 export const getReviewsByCategory = (category) => {
     return gamesApi.get(`/reviews?category=${category}`).then((res) => {

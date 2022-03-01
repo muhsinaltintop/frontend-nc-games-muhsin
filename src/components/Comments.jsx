@@ -4,7 +4,7 @@ import { getCommentsByReview } from "../utils/api";
 import DeleteComment from "./DeleteComment";
 import styles from './Comments.module.css';
 import AddComment from "./AddComment";
-import CommentVote from "./CommentVote";
+import UpVote from "./UpVote";
 
 const Comments = ({review_id}) => {
     const[comments, setComments] = useState([]);
@@ -38,10 +38,11 @@ const Comments = ({review_id}) => {
                               <div className={styles.comment_body}>{comment.body}</div>
                               <div className={styles.comment_date}> {dayjs(comment.created_at).format("DD/MM/YYYY")}</div>
                               <div className={styles.comment_votes}>Votes: {comment.votes}</div>
-                              <div><CommentVote 
+                              <div><UpVote
                               currentVote={comment.votes}
                               id={comment.comment_id}
                               setVoted={setVoted}
+                              path={"comments"}
                               />
                               </div>
                               <div className={styles.comment_button}><DeleteComment comment_id={comment.comment_id} setDeletedComment={setDeletedComment} comments={comments}/></div>
